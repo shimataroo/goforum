@@ -1,0 +1,13 @@
+{{ define "content" }}
+
+<form role="form" action="/thread/create" method="post">
+  <div class="lead">スレッドを作成する</div>
+  <br/>
+  <div class="form-group">
+    <input type="text" style="width:400px;" class="form-control" name="topic" id="topic" placeholder="スレッドのトピックを書いてください">
+    <br/>
+    <button class="btn btn-lg btn-primary pull-right" type="submit">このスレッドを開始</button>
+  </div>
+</form>
+
+{{ end }}

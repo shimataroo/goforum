@@ -1,0 +1,29 @@
+{{ define "content" }}
+
+<img src="/static/upload/sample.png" width="200" height="auto">
+
+<div>
+  <font size="4">ユーザ名 : {{ .Name }}</font>
+</div>
+<div>
+  <font size="4">ひとこと : {{ .Name }}</font>
+</div>
+
+<br/>
+
+<div class="form-group">
+  <form method="post" action="/upload" enctype="multipart/form-data">
+    <label for="file1">プロフィール画像を変更↓</label>
+    <input type="file" id="file1" name="uploadfile" class="form-control-file" required>
+    <br/>
+    <p> <input type="submit" name="save" value="保存"> </p>
+    <a class="btn btn-primary" href="/login" role="button">プロフィール編集</a>
+  </form>
+</div>
+
+<br/>
+<p class="lead">
+  <a href="/">ホームに戻る</a>
+</p>
+
+{{end}}

@@ -1,0 +1,41 @@
+{{ define "content" }}
+
+<div class="card">
+  <div class="card-header">
+    <span class="lead">
+      <font size="5">{{ .Topic }}</font>
+    </span>
+    <div class="pull-right">
+      開始ユーザ :  {{ .User.Name }}
+    </div>
+
+  </div>
+  
+  {{ range .Posts }}
+  <div class="card-body p-2">
+    <span class="lead">{{ .Body }}</span>
+    <div class="pull-right">
+       投稿：{{ .User.Name }}
+    </div>
+  </div>
+  {{ end }}    
+
+</div>
+
+
+  <div class="panel panel-info">
+    <div class="panel-body">
+     <form role="form" action="/thread/post" method="post">
+       <div class="form-group">
+         <textarea class="form-control" name="body" id="body" placeholder="ここに返信を書いてください" rows="3"></textarea>
+         <input type="hidden" name="uuid" value="{{ .Uuid }}">
+         <br/>
+         <button class="btn btn-primary pull-right" type="submit">返信</button>
+       </div>
+     </form>
+     </div>
+  </div>
+
+
+
+{{ end }}

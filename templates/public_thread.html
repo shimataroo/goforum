@@ -1,0 +1,25 @@
+{{ define "content" }}
+
+<div class="card">
+  <div class="card-header">
+    <span class="lead">
+      <font size="5">{{ .Topic }}</font>
+    </span>
+    <div class="pull-right">
+      開始ユーザ :  {{ .User.Name }}
+    </div>
+
+  </div>
+  
+  {{ range .Posts }}
+  <div class="card-body p-3">
+    <span class="lead">{{ .Body }}</span>
+    <div class="pull-right">
+     投稿：{{ .User.Name }}
+    </div>
+  </div>
+  {{ end }}
+
+</div>
+
+{{ end }}

@@ -1,0 +1,26 @@
+{{ define "content" }}
+
+<p class="lead">
+  <font size="5">スレッド一覧</font>
+</p>
+
+{{ range . }}
+  <div class="card">
+    <div class="card-header">
+     <font size="5">{{ .Topic }}</font>
+    </div>
+     <div class="card-body p-2">
+       開始ユーザ : {{ .User.Name }} - 投稿数 {{ .NumReplies }}
+      <div class="pull-right">
+        <a href="/thread/read?id={{.Uuid }}">もっと読む</a>
+      </div>
+    </div>
+  </div>
+{{ end }}
+
+  <br/>
+  <p class="lead">
+    <a href="/thread/new">新しくスレッドを開始する→</a>
+  </p>
+
+{{ end }}

@@ -1,0 +1,14 @@
+{{ define "content" }}
+
+  <form class="form-signin center" role="form" action="/signup_Account" method="post">
+    <h2 class="form-signin-heading">
+        サインアップ
+    </h2>
+    <input type="text" name="name" id="name" class="form-control" placeholder="ユーザネーム" required autofocus>
+    <input type="email" name="email" class="form-control" placeholder="Email" required autofocus>
+    <input type="password" name="password" class="form-control" placeholder="パスワード" required>
+    <br/>
+    <button class="btn btn-lg btn-primary btn-block" type="submit">登録</button>
+  </form>
+
+{{end}}
