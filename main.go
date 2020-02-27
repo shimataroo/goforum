@@ -2,7 +2,16 @@ package main
 
 import (
 	"net/http"
+	"os"
 )
+
+func getListenPort() string {
+	port := os.Getenv("PORT")
+	if port != "" {
+		return ":" + port
+	}
+	return ":3000"
+}
 
 func main() {
 	mux := http.NewServeMux()
@@ -29,9 +38,8 @@ func main() {
 	mux.HandleFunc("/mypage", mypage)
 	mux.HandleFunc("/upload", upload)
 
-	server := &http.Server{
-		Addr:    "0.0.0.0:8080",
-		Handler: mux,
+	server := http.Server{
+		Addr: getListenPort(),
 	}
 	server.ListenAndServe()
 }
